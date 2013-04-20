@@ -4,6 +4,7 @@
 package ec.edu.ucuenca.holausuario;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -15,12 +16,18 @@ public class ResultActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.lyt_result);
+		//setContentView(R.layout.lyt_result);
 		
-		final TextView txtMensaje = (TextView) findViewById(R.id.txtResult);
+		//final TextView txtMensaje = (TextView) findViewById(R.id.txtResult);		
+		//Bundle bundle = getIntent().getExtras();
+		//txtMensaje.setText("Hola " + bundle.getString("Nombre"));
 		
-		Bundle bundle = getIntent().getExtras();
+		Intent intent = getIntent();		
+		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
-		txtMensaje.setText("Hola " + bundle.getString("Nombre"));
+		TextView textView = new TextView(this);
+		textView.setTextSize(40);
+		textView.setText(message);
+		setContentView(textView);
 	}
 }

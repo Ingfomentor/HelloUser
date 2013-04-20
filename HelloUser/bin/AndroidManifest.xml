@@ -18,12 +18,22 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-        <activity android:name="ResultActivity"></activity>
+        <!-- The android:parentActivityName attribute declares the name of
+            this activity's parent activity within the app's logical hierarchy.
+            The system uses this value to implement default navigation behaviors,
+            such as Up navigation on Android 4.1 (API level 16) and higher. You
+            can provide the same navigation behaviors for older versions of
+            Android by using the Support Library and adding the <meta-data> element as shown here. -->
+            
+        <activity
+            android:name="ec.edu.ucuenca.holausuario.ResultActivity"
+            android:label="@string/title_activity_display_message"            
+            android:parentActivityName="ec.edu.ucuenca.holausuario.MainActivity">            
+        </activity>
         
     </application>
 
